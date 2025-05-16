@@ -8,6 +8,7 @@ import { motion } from "motion/react";
 import { upward } from "@/lib/constant";
 import { FcGoogle } from "react-icons/fc";
 import Link from "next/link";
+import { signIn } from "next-auth/react";
 
 export default function SignupComponent() {
   return (
@@ -112,20 +113,18 @@ export default function SignupComponent() {
           >
             Sign Up
           </Button>
-
-          <Button
-            className={`${mona.className} rounded-3xl py-4 md:py-6 tracking-wider bg-transparent hover:bg-transparent cursor-pointer border text-black`}
-            type="submit"
-          >
-            <FcGoogle className="size-6" />
-            <p>Sign Up with Google</p>
-          </Button>
         </form>
-
+        <Button
+          className={`${mona.className} rounded-3xl py-4 md:py-6 tracking-wider bg-transparent hover:bg-transparent cursor-pointer border text-black`}
+          onClick={() => signIn("google")}
+        >
+          <FcGoogle className="size-6" />
+          <p>Sign Up with Google</p>
+        </Button>
         <p className={`${mona.className} text-center text-gray-500`}>
-          Already have account?{" "}
+          Already have account ?{" "}
           <Link href={"/login"} className={`text-black cursor-pointer`}>
-            Signup
+            Signin
           </Link>
         </p>
       </div>
