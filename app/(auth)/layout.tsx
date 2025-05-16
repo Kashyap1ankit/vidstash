@@ -1,19 +1,20 @@
 import type { Metadata } from "next";
-import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Vidstash",
+  title: "Auth",
   description: "Securely store, preview & share your videos",
 };
 
-export default function RootLayout({
+export default function AuthLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="bg-gradient-to-l from-primary-bg  from-35% via-secondary-bg to-teritary-blue max-w-7xl mx-auto px-4 sm:px-6 lg:px-20 ">
+        {children}
+      </body>
     </html>
   );
 }
