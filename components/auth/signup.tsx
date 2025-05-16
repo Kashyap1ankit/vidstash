@@ -1,7 +1,7 @@
 "use client";
 
 import { mona, sora } from "@/lib/font";
-import { EyeOff, LockIcon, Mail, User } from "lucide-react";
+import { Eye, EyeOff, LockIcon, Mail, User } from "lucide-react";
 import Image from "next/image";
 import { Button } from "../ui/button";
 import { motion } from "motion/react";
@@ -9,8 +9,44 @@ import { upward } from "@/lib/constant";
 import { FcGoogle } from "react-icons/fc";
 import Link from "next/link";
 import { signIn } from "next-auth/react";
+import { useForm } from "react-hook-form";
+import { signupSchema, signupSchemaType } from "@/schema/auth,validator";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useState } from "react";
+import { createAccount } from "@/app/actions/signup.auth";
+import { toast } from "sonner";
+import { useRouter } from "next/navigation";
 
 export default function SignupComponent() {
+  const [passwordVisible, setPasswordVisible] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const router = useRouter();
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<signupSchemaType>({
+    resolver: zodResolver(signupSchema),
+  });
+
+  async function authenticateUser(data: signupSchemaType) {
+    try {
+      setLoading(true);
+      const response = await createAccount(data);
+      if (response.status !== 200) throw new Error(response.message);
+      toast.success(response.message);
+      router.push("/login");
+    } catch (error) {
+      toast.error((error as Error).message);
+    } finally {
+      reset();
+      setLoading(false);
+    }
+  }
+
   return (
     <motion.div
       initial={upward.initial}
@@ -48,7 +84,10 @@ export default function SignupComponent() {
           </p>
         </div>
 
-        <form className="flex flex-col gap-6">
+        <form
+          className="flex flex-col gap-6"
+          onSubmit={handleSubmit(authenticateUser)}
+        >
           {/* Full Name */}
           <div>
             <label
@@ -64,9 +103,15 @@ export default function SignupComponent() {
                 placeholder="Enter name"
                 id="full-name"
                 type="text"
-                name="name"
+                {...register("name")}
               />
             </div>
+
+            {errors.name?.message && (
+              <p className={`${sora.className} mt-2 text-sm text-red-500`}>
+                {errors.name?.message}
+              </p>
+            )}
           </div>
 
           {/* Email */}
@@ -81,9 +126,14 @@ export default function SignupComponent() {
                 placeholder="Enter email"
                 id="email"
                 type="email"
-                name="email"
+                {...register("email")}
               />
             </div>
+            {errors.email?.message && (
+              <p className={`${sora.className} mt-2 text-sm text-red-500`}>
+                {errors.email?.message}
+              </p>
+            )}
           </div>
 
           {/* Password */}
@@ -100,18 +150,34 @@ export default function SignupComponent() {
                 className={`w-full outline-none bg-white ${sora.className} placeholder:text-gray-400`}
                 placeholder="Enter password"
                 id="password"
-                type="password"
-                name="password"
+                type={passwordVisible ? "text" : "password"}
+                {...register("password")}
               />
-              <EyeOff className="text-gray-400 size-4 cursor-pointer" />
+              {passwordVisible ? (
+                <EyeOff
+                  className="text-gray-400 size-4 cursor-pointer"
+                  onClick={() => setPasswordVisible(false)}
+                />
+              ) : (
+                <Eye
+                  className="text-gray-400 size-4 cursor-pointer"
+                  onClick={() => setPasswordVisible(true)}
+                />
+              )}
             </div>
+            {errors.password?.message && (
+              <p className={`${sora.className} mt-2 text-sm text-red-500`}>
+                {errors.password?.message}
+              </p>
+            )}
           </div>
 
           <Button
             className={`${mona.className} rounded-3xl py-4 md:py-6 tracking-wider  cursor-pointer`}
             type="submit"
+            disabled={loading}
           >
-            Sign Up
+            <p>{loading ? "Signin up...." : "Sign Up"}</p>
           </Button>
         </form>
         <Button

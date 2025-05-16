@@ -1,7 +1,7 @@
 "use client";
 
 import { mona, sora } from "@/lib/font";
-import { EyeOff, LockIcon, Mail, User } from "lucide-react";
+import { Eye, EyeOff, LockIcon, Mail, User } from "lucide-react";
 import Image from "next/image";
 import { Button } from "../ui/button";
 import { motion } from "motion/react";
@@ -9,8 +9,10 @@ import { upward } from "@/lib/constant";
 import { FcGoogle } from "react-icons/fc";
 import Link from "next/link";
 import { signIn } from "next-auth/react";
+import { useState } from "react";
 
 export default function LoginComponent() {
+  const [passwordVisible, setPasswordVisible] = useState(false);
   return (
     <motion.div
       initial={upward.initial}
@@ -80,10 +82,20 @@ export default function LoginComponent() {
                 className={`w-full outline-none bg-white ${sora.className} placeholder:text-gray-400`}
                 placeholder="Enter password"
                 id="password"
-                type="password"
+                type={passwordVisible ? "text" : "password"}
                 name="password"
               />
-              <EyeOff className="text-gray-400 size-4 cursor-pointer" />
+              {passwordVisible ? (
+                <EyeOff
+                  className="text-gray-400 size-4 cursor-pointer"
+                  onClick={() => setPasswordVisible(false)}
+                />
+              ) : (
+                <Eye
+                  className="text-gray-400 size-4 cursor-pointer"
+                  onClick={() => setPasswordVisible(true)}
+                />
+              )}
             </div>
           </div>
 

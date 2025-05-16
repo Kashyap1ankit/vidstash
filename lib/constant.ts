@@ -187,3 +187,5 @@ export const pricing = [
     ],
   },
 ];
+
+export const saltRounds = 10;
