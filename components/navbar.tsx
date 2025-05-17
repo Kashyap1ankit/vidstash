@@ -30,11 +30,11 @@ export default function Navbar() {
       {/* Logo */}
       <Link href={"/"}>
         <Image
-          src={"/logo.png"}
+          src={"/vidstash.png"}
           width={200}
           height={200}
           alt="logo"
-          className="w-24"
+          className="w-36"
         />
       </Link>
 
@@ -53,21 +53,9 @@ export default function Navbar() {
 
       {/* Desktop Buttons */}
       <div className="hidden lg:flex items-center gap-4">
-        <Link
-          href="https://docs.google.com/forms/d/e/1FAIpQLSc4XPjHJ3EZDaiDgs5ze1xyVWHnlxpF4fSnHdkzAYxuMl4ABw/viewform"
-          target="_blank"
-        >
-          <Button className="bg-white rounded-full text-black border hover:bg-white py-6">
-            <p className={`${instrument.className} text-lg`}>Contact Us</p>
-          </Button>
-        </Link>
-        <Link
-          href="https://api.whatsapp.com/send/?phone=%2B919998881729&text&type=phone_number&app_absent=0"
-          target="_blank"
-          className="group"
-        >
+        <Link href="/login" className="group">
           <Button className="bg-primary-btn rounded-full text-white hover:bg-primary-btn flex gap-2 items-center py-6">
-            <p className={`${instrument.className} text-lg`}>Talk to Puch</p>
+            <p className={`${instrument.className} text-lg`}>Get Started</p>
             <ArrowRight className="size-8 text-black bg-white p-2 rounded-full group-hover:translate-x-2 transition" />
           </Button>
         </Link>

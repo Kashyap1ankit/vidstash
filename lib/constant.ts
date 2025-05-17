@@ -13,30 +13,6 @@ export const navItems = [
   },
 ];
 
-export const people = [
-  {
-    id: 1,
-    name: "John Doe",
-    designation: "Software Engineer",
-    image:
-      "https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3387&q=80",
-  },
-  {
-    id: 2,
-    name: "Robert Johnson",
-    designation: "Product Manager",
-    image:
-      "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
-  },
-  {
-    id: 3,
-    name: "Jane Smith",
-    designation: "Data Scientist",
-    image:
-      "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
-  },
-];
-
 export const blurIn = {
   initial: {
     opacity: 0,
@@ -88,104 +64,10 @@ export const sideward = {
   },
 };
 
-export const whyPuch = [
-  {
-    title: "Native Indic Language Support",
-    des: "Connect naturally in your mother tongue. Puch.AI understands and responds fluently in Hindi, Marathi, Bengali, Tamil, Telugu, Kannada, Malayalam, Gujarati, Punjabi and more regional languages.",
-    image: "/image-1.png",
-  },
-  {
-    title: "Instant Fact-Checking at Your Fingertips",
-    des: "Simply forward any suspicious message to Puch.AI and receive immediate verification. Our advanced fact-checking system analyzes content across multiple reliable sources, detecting misinformation and providing accurate answers in seconds—all in your preferred Indic language. Stop the spread of false information with just one forward to your trusted digital companion.",
-    image: "/image-2.jpg",
-  },
-  {
-    title: "Natural Voice Responses in Every Language",
-    des: "Experience the convenience of voice outputs in any Indic language Puch.AI supports. Our lifelike voice technology delivers responses in Hindi, Marathi, Bengali, Tamil and other regional languages with authentic pronunciation and natural intonation. Listen to news updates, recipes, facts, or answers while on the go—making information access effortless and accessible for everyone, regardless of reading preferences or abilities.",
-    image: "/image-3.png",
-  },
-  {
-    title: "Live IPL Updates in Your Language",
-    des: "Stay connected to every match with Puch.AI's real-time cricket score updates. Get ball-by-ball commentary, player statistics, and match highlights delivered instantly in your preferred Indic language. Receive comprehensive IPL updates without leaving WhatsApp.",
-    image: "/image-4.png",
-  },
-];
-
-export const faq = [
-  {
-    question: "What is Puch.AI?",
-    answer:
-      "Puch.AI is India’s first AI-powered WhatsApp assistant that provides real-time information, fact-checking, updates, and support in multiple Indian languages.",
-  },
-  {
-    question: "How can I start using Puch.AI?",
-    answer:
-      "You can start using Puch.AI by simply sending a message to their official WhatsApp number. No app downloads or sign-ups are required.",
-  },
-  {
-    question: "Is Puch.AI free to use?",
-    answer:
-      "Yes, Puch.AI is completely free to use for all users and offers 24/7 availability.",
-  },
-  {
-    question: "Which languages does Puch.AI support?",
-    answer:
-      "Puch.AI supports multiple Indian languages including Hindi, Bengali, Marathi, Tamil, Telugu, Malayalam, Kannada, Gujarati, Punjabi, and Oriya.",
-  },
-  {
-    question: "Can I use Puch.AI to verify forwarded WhatsApp messages?",
-    answer:
-      "Yes, you can forward any message to Puch.AI, and it will instantly check for misinformation by comparing it with trusted sources.",
-  },
-  {
-    question: "Does Puch.AI store my personal data?",
-    answer:
-      "No, Puch.AI is designed with privacy in mind and does not store any personal user data from your chats.",
-  },
-  {
-    question: "What kind of updates can I get from Puch.AI?",
-    answer:
-      "You can get updates on a variety of topics like live IPL scores, news summaries, general knowledge, government schemes, and more—all through WhatsApp.",
-  },
-];
-
-export const pricing = [
-  {
-    plan: "Personal Plan",
-    BestFor: "Best for Individual",
-    tier: "Free",
-    price: "Starting at ₹0/month",
-    description: "Access Puch.AI core features with no cost.",
-    features: [
-      { title: "Unlimited WhatsApp access", applicable: true },
-
-      { title: "Instant fact-checking", applicable: true },
-      { title: "Live IPL & news updates", applicable: true },
-      { title: "Voice-based replies", applicable: true },
-      { title: "24/7 availability", applicable: true },
-      { title: "Customizable voice assistants", applicable: false },
-      { title: "Early access to new features", applicable: false },
-      { title: "Personalized daily briefs", applicable: false },
-    ],
-  },
-  {
-    plan: "Team Plan",
-    BestFor: "Best for your Team",
-    tier: "Pro (Coming Soon)",
-    price: "Coming Soon",
-    description: "Unlock enhanced capabilities for power users.",
-    features: [
-      { title: "Unlimited WhatsApp access", applicable: true },
-
-      { title: "Instant fact-checking", applicable: true },
-      { title: "Live IPL & news updates", applicable: true },
-      { title: "Voice-based replies", applicable: true },
-      { title: "24/7 availability", applicable: true },
-      { title: "Customizable voice assistants", applicable: true },
-      { title: "Early access to new features", applicable: true },
-      { title: "Personalized daily briefs", applicable: true },
-    ],
-  },
-];
-
 export const saltRounds = 10;
+
+export const publicRoutes = ["/"];
+
+export const authRoutes = ["/login", "/signup"];
+
+export const authApiRoute = "/api/auth";
