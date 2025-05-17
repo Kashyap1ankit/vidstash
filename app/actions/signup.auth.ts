@@ -2,7 +2,7 @@
 
 import { saltRounds } from "@/lib/constant";
 import { prisma } from "@/prisma";
-import { signupSchema, signupSchemaType } from "@/schema/auth,validator";
+import { signupSchema, signupSchemaType } from "@/schema/auth.validator";
 import bcrypt from "bcryptjs";
 
 export async function createAccount(formData: signupSchemaType) {

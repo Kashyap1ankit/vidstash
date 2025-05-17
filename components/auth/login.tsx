@@ -10,9 +10,46 @@ import { FcGoogle } from "react-icons/fc";
 import Link from "next/link";
 import { signIn } from "next-auth/react";
 import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { useRouter } from "next/navigation";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { signinSchema, signinSchemaType } from "@/schema/auth.validator";
+import { toast } from "sonner";
 
 export default function LoginComponent() {
   const [passwordVisible, setPasswordVisible] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const router = useRouter();
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<signinSchemaType>({
+    resolver: zodResolver(signinSchema),
+  });
+
+  async function loggedInUser(data: signinSchemaType) {
+    try {
+      setLoading(true);
+      const response = await signIn("credentials", {
+        email: data.email,
+        password: data.password,
+        redirect: false,
+      });
+      if (response.error) throw new Error("Username / Password mismatched");
+      toast.success("Redirecting....");
+      router.push("/dashboard");
+    } catch (error) {
+      toast.error((error as Error).message);
+    } finally {
+      reset();
+      setLoading(false);
+    }
+  }
+
   return (
     <motion.div
       initial={upward.initial}
@@ -50,7 +87,10 @@ export default function LoginComponent() {
           </p>
         </div>
 
-        <form className="flex flex-col gap-6">
+        <form
+          className="flex flex-col gap-6"
+          onSubmit={handleSubmit(loggedInUser)}
+        >
           {/* Email */}
           <div>
             <label htmlFor="email" className={`${sora.className} font-light`}>
@@ -63,9 +103,14 @@ export default function LoginComponent() {
                 placeholder="Enter email"
                 id="email"
                 type="email"
-                name="email"
+                {...register("email")}
               />
             </div>
+            {errors.email?.message && (
+              <p className={`${sora.className} mt-2 text-sm text-red-500`}>
+                {errors.email?.message}
+              </p>
+            )}
           </div>
 
           {/* Password */}
@@ -83,7 +128,7 @@ export default function LoginComponent() {
                 placeholder="Enter password"
                 id="password"
                 type={passwordVisible ? "text" : "password"}
-                name="password"
+                {...register("password")}
               />
               {passwordVisible ? (
                 <EyeOff
@@ -97,19 +142,25 @@ export default function LoginComponent() {
                 />
               )}
             </div>
+            {errors.password?.message && (
+              <p className={`${sora.className} mt-2 text-sm text-red-500`}>
+                {errors.password?.message}
+              </p>
+            )}
           </div>
 
           <Button
             className={`${mona.className} rounded-3xl py-4 md:py-6 tracking-wider  cursor-pointer`}
             type="submit"
+            disabled={loading}
           >
-            Sign In
+            <p> {loading ? "Signing...." : "Sign In"}</p>
           </Button>
         </form>
 
         <Button
           className={`${mona.className} rounded-3xl py-4 md:py-6 tracking-wider bg-transparent hover:bg-transparent cursor-pointer border text-black`}
-          onClick={() => signIn("google")}
+          onClick={() => signIn("google", { redirectTo: "/dashboard" })}
         >
           <FcGoogle className="size-6" />
           <p>Sign in with Google</p>

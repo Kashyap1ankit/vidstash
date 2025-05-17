@@ -10,7 +10,7 @@ import { FcGoogle } from "react-icons/fc";
 import Link from "next/link";
 import { signIn } from "next-auth/react";
 import { useForm } from "react-hook-form";
-import { signupSchema, signupSchemaType } from "@/schema/auth,validator";
+import { signupSchema, signupSchemaType } from "@/schema/auth.validator";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import { createAccount } from "@/app/actions/signup.auth";
@@ -182,7 +182,7 @@ export default function SignupComponent() {
         </form>
         <Button
           className={`${mona.className} rounded-3xl py-4 md:py-6 tracking-wider bg-transparent hover:bg-transparent cursor-pointer border text-black`}
-          onClick={() => signIn("google")}
+          onClick={() => signIn("google", { redirectTo: "/dashboard" })}
         >
           <FcGoogle className="size-6" />
           <p>Sign Up with Google</p>
