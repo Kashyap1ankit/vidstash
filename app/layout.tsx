@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
+import { SessionProvider } from "next-auth/react";
 
 export const metadata: Metadata = {
   title: "Vidstash",
@@ -15,8 +16,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <main>{children}</main>
-        <Toaster />
+        {" "}
+        <SessionProvider>
+          <main>{children}</main>
+          <Toaster />
+        </SessionProvider>
       </body>
     </html>
   );
