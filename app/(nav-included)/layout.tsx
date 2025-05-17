@@ -7,11 +7,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className="bg-gradient-to-l from-primary-bg  from-35% via-secondary-bg to-teritary-blue">
         <Navbar />
-        <main className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-44">
-          {children}
-        </main>
+        {children}
       </body>
     </html>
   );
