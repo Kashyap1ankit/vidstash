@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Button } from "./ui/button";
 import { ArrowRight, Menu, X } from "lucide-react";
 import { instrument } from "@/lib/font";
-import { navItems } from "@/lib/constant";
+
 import { useState } from "react";
 
 export default function Navbar() {
@@ -13,7 +13,7 @@ export default function Navbar() {
 
   return (
     <div
-      className={` py-4  border px-6 md:px-24 flex items-center justify-between z-999 bg-white`}
+      className={` w-full py-4  border px-6 md:px-24 flex items-center justify-between z-999 bg-white`}
     >
       {/* Logo */}
       <Link href={"/"}>

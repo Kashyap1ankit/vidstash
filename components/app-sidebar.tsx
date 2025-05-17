@@ -1,6 +1,6 @@
 "use client";
 
-import { History, Home, LogOut, Send, Settings } from "lucide-react";
+import { LogOut } from "lucide-react";
 
 import {
   Sidebar,
@@ -12,35 +12,13 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
-import { mona, sora } from "@/lib/font";
+import { mona } from "@/lib/font";
 import { signOut } from "next-auth/react";
-
-// Menu items.
-const items = [
-  {
-    title: "Home",
-    link: "/dashboard",
-    icon: Home,
-  },
-  {
-    title: "History",
-    link: "/dashboard/history",
-    icon: History,
-  },
-  {
-    title: "Shared Links",
-    link: "/dashboard/share/links",
-    icon: Send,
-  },
-
-  {
-    title: "Settings",
-    link: "/dashboard/settings",
-    icon: Settings,
-  },
-];
+import { items } from "@/lib/constant";
+import { usePathname } from "next/navigation";
 
 export function AppSidebar() {
+  const pathname = usePathname();
   return (
     <Sidebar className="relative top-0  " collapsible="icon">
       <SidebarContent>
@@ -50,9 +28,20 @@ export function AppSidebar() {
               {items.map((item) => (
                 <SidebarMenuItem
                   key={item.title}
-                  className={`${mona.className} mx-auto`}
+                  className={`${mona.className} w-full p-2  ${
+                    pathname === item.link
+                      ? "bg-orange-500 hover:bg-orange-500 rounded-md text-white "
+                      : ""
+                  }`}
                 >
-                  <SidebarMenuButton asChild>
+                  <SidebarMenuButton
+                    asChild
+                    className={`justify-center ${
+                      pathname === item.link
+                        ? "bg-orange-500 hover:bg-orange-500  hover:text-white"
+                        : ""
+                    }`}
+                  >
                     <a href={item.link}>
                       <item.icon />
                       <span>{item.title}</span>

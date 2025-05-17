@@ -1,18 +1,3 @@
-export const navItems = [
-  {
-    name: "Features",
-    link: "/",
-  },
-  {
-    name: "Pricing",
-    link: "#pricing",
-  },
-  {
-    name: "Contact",
-    link: "https://docs.google.com/forms/d/e/1FAIpQLSc4XPjHJ3EZDaiDgs5ze1xyVWHnlxpF4fSnHdkzAYxuMl4ABw/viewform",
-  },
-];
-
 export const blurIn = {
   initial: {
     opacity: 0,
@@ -71,3 +56,30 @@ export const publicRoutes = ["/"];
 export const authRoutes = ["/login", "/signup"];
 
 export const authApiRoute = "/api/auth";
+
+import { History, Home, Send, Settings } from "lucide-react";
+
+// Menu items.
+export const items = [
+  {
+    title: "Home",
+    link: "/dashboard",
+    icon: Home,
+  },
+  {
+    title: "History",
+    link: "/dashboard/history",
+    icon: History,
+  },
+  {
+    title: "Shared Links",
+    link: "/dashboard/shared",
+    icon: Send,
+  },
+
+  {
+    title: "Settings",
+    link: "/dashboard/settings",
+    icon: Settings,
+  },
+];
