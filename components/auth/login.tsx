@@ -39,7 +39,7 @@ export default function LoginComponent() {
         password: data.password,
         redirect: false,
       });
-      if (response.error) throw new Error("Username / Password mismatched");
+      if (response.error) throw new Error("No such User exits");
       toast.success("Redirecting....");
       router.push("/dashboard");
     } catch (error) {
@@ -54,19 +54,9 @@ export default function LoginComponent() {
     <motion.div
       initial={upward.initial}
       animate={upward.animate}
-      className="flex flex-col md:flex-row items-center justify-center  min-h-dvh gap-10 md:gap-24 "
+      className=" min-h-dvh  "
     >
-      <div className="w-full md:w-1/2 flex justify-center">
-        <Image
-          src="https://images.pexels.com/photos/27396198/pexels-photo-27396198/free-photo-of-a-laptop-with-a-camera-on-it.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-          width={500}
-          height={500}
-          alt="signup-img"
-          className="rounded-2xl object-cover w-full h-full max-h-[400px] md:max-h-dvh mt-3"
-        />
-      </div>
-
-      <div className="w-full md:w-1/2 flex flex-col gap-8">
+      <div className="w-full md:w-1/2 flex flex-col gap-8 mx-auto mt-12 md:mt-20 ">
         <div className="flex flex-col gap-4 text-center">
           <Image
             src="/vidstash.png"
@@ -165,7 +155,7 @@ export default function LoginComponent() {
           <FcGoogle className="size-6" />
           <p>Sign in with Google</p>
         </Button>
-        <p className={`${mona.className} text-center text-gray-500`}>
+        <p className={`${mona.className} text-center text-gray-500 text-sm`}>
           New to Website?{" "}
           <Link href={"/signup"} className={`text-black cursor-pointer`}>
             Signup
