@@ -142,6 +142,8 @@
   --sidebar-border: oklch(0.922 0 0);
 
   --sidebar-ring: oklch(0.708 0 0);
+
+  --primary-btn: oklch(64.6% 0.222 41.116);
 }
 
 .dark {
@@ -243,5 +245,5 @@
   --color-primary-bg: #fef6e4;
   --color-secondary-bg: #fffdf9;
   --color-teritary-bg: #f0f0f0;
-  --color-primary-btn: #282929;
+  --color-primary-btn: var(--primary-btn);
 }

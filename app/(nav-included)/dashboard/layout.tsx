@@ -11,7 +11,7 @@ export default function DashboardRootLayout({
       <div className="flex  h-dvh w-screen overflow-hidden">
         <AppSidebar />
         <main className="flex flex-col md:flex-row overflow-auto">
-          <SidebarTrigger className="top-0 -left-2 text-orange-500" />
+          <SidebarTrigger className="top-0 -left-2 text-primary-btn" />
           <div>{children}</div>
         </main>
       </div>

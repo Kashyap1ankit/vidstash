@@ -29,7 +29,7 @@ export default function Navbar() {
       {/* Desktop Buttons */}
       <div className="hidden lg:flex items-center gap-4">
         <Link href="/login" className="group">
-          <Button className="bg-orange-500 rounded-full text-white hover:bg-orange-400 cursor-pointer flex gap-2 items-center py-6">
+          <Button className="bg-primary-btn rounded-full text-white hover:bg-orange-400 cursor-pointer flex gap-2 items-center py-6">
             <p className={`${instrument.className} text-lg`}>Get Started</p>
             <ArrowRight className="size-8 text-black bg-white p-2 rounded-full group-hover:translate-x-2 transition" />
           </Button>
@@ -47,7 +47,7 @@ export default function Navbar() {
       {isMobileMenuOpen && (
         <div className="absolute top-24 left-1/2 -translate-x-1/2 w-11/12 md:w-fit bg-white border rounded-lg mt-4 p-4 lg:hidden shadow-xl space-y-4 z-40">
           <Link href="/login" className="group">
-            <Button className="bg-orange-500 rounded-md text-white hover:bg-orange-500  flex gap-2 items-center py-6 w-full">
+            <Button className="bg-primary-btn rounded-md text-white hover:bg-primary-btn  flex gap-2 items-center py-6 w-full">
               <p className={`${instrument.className} text-lg`}>Get Started</p>
               <ArrowRight className="size-8 text-black bg-white p-2 rounded-full group-hover:translate-x-2 transition" />
             </Button>

@@ -30,7 +30,7 @@ export function AppSidebar() {
                   key={item.title}
                   className={`${mona.className} w-full p-2  ${
                     pathname === item.link
-                      ? "bg-orange-500 hover:bg-orange-500 rounded-md text-white "
+                      ? "bg-primary-btn hover:bg-primary-btn rounded-md text-white "
                       : ""
                   }`}
                 >
@@ -38,7 +38,7 @@ export function AppSidebar() {
                     asChild
                     className={`justify-center ${
                       pathname === item.link
-                        ? "bg-orange-500 hover:bg-orange-500  hover:text-white"
+                        ? "bg-primary-btn hover:bg-primary-btn  hover:text-white"
                         : ""
                     }`}
                   >
@@ -55,7 +55,7 @@ export function AppSidebar() {
       </SidebarContent>
       <SidebarFooter className="absolute bottom-0 md:bottom-22 left-0 w-full border-t bg-gray-100 ">
         <SidebarMenuButton
-          className={`${mona.className} justify-center cursor-pointer hover:bg-orange-500 hover:text-white w-full mx-auto`}
+          className={`${mona.className} justify-center cursor-pointer hover:bg-primary-btn hover:text-white w-full mx-auto`}
           onClick={() => signOut({ redirectTo: "/signin" })}
         >
           <LogOut className="size-4" />
