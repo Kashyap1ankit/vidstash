@@ -17,7 +17,7 @@ import {
   Trash,
 } from "lucide-react";
 import { historyData, resumeCards } from "@/lib/constant";
-import { Avatar, AvatarImage, AvatarFallback } from "../ui/avatar";
+import { Avatar, AvatarImage, AvatarFallback } from "./ui/avatar";
 import { mona, sora } from "@/lib/font";
 
 export default function HistoryTablur() {

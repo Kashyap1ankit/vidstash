@@ -1,4 +1,4 @@
-import HistoryTablur from "@/components/history/page";
+import HistoryTablur from "@/components/history";
 import { mona } from "@/lib/font";
 import React from "react";
 
