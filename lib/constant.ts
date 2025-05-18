@@ -57,7 +57,7 @@ export const authRoutes = ["/login", "/signup"];
 
 export const authApiRoute = "/api/auth";
 
-import { History, Home, Send, Settings } from "lucide-react";
+import { History, Home, Settings, User } from "lucide-react";
 
 // Menu items.
 export const items = [
@@ -72,9 +72,9 @@ export const items = [
     icon: History,
   },
   {
-    title: "Shared Links",
-    link: "/dashboard/shared",
-    icon: Send,
+    title: "Profile",
+    link: "/dashboard/profile",
+    icon: User,
   },
 
   {
@@ -184,5 +184,78 @@ export const resumeCards = [
       fallback: "AP",
     },
     uploadedAt: "22 April 2025",
+  },
+];
+
+export const historyData = [
+  {
+    id: "001",
+    name: "Ankit Kashyap",
+    createdAt: "2025-05-01",
+    expiry: "2025-06-01",
+    type: "PRIVATE",
+  },
+  {
+    id: "002",
+    name: "Sakshi Mehta",
+    createdAt: "2025-04-25",
+    expiry: "2025-05-25",
+    type: "PUBLIC",
+  },
+  {
+    id: "003",
+    name: "Ravi Verma",
+    createdAt: "2025-04-20",
+    expiry: "2025-05-20",
+    type: "PRIVATE",
+  },
+  {
+    id: "004",
+    name: "Neha Sharma",
+    createdAt: "2025-04-15",
+    expiry: "2025-05-15",
+    type: "PUBLIC",
+  },
+  {
+    id: "005",
+    name: "Aman Gupta",
+    createdAt: "2025-04-10",
+    expiry: "2025-05-10",
+    type: "PRIVATE",
+  },
+  {
+    id: "006",
+    name: "Kritika Singh",
+    createdAt: "2025-04-05",
+    expiry: "2025-05-05",
+    type: "PRIVATE",
+  },
+  {
+    id: "007",
+    name: "Mohit Rana",
+    createdAt: "2025-04-01",
+    expiry: "2025-05-01",
+    type: "PRIVATE",
+  },
+  {
+    id: "008",
+    name: "Priya Desai",
+    createdAt: "2025-03-28",
+    expiry: "2025-04-28",
+    type: "PRIVATE",
+  },
+  {
+    id: "009",
+    name: "Rohan Mishra",
+    createdAt: "2025-03-25",
+    expiry: "2025-04-25",
+    type: "PUBLIC",
+  },
+  {
+    id: "010",
+    name: "Tanvi Rawat",
+    createdAt: "2025-03-20",
+    expiry: "2025-04-20",
+    type: "PUBLIC",
   },
 ];

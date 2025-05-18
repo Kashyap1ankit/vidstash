@@ -12,7 +12,6 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
@@ -39,7 +38,7 @@ export default function TabularVideo() {
           {resumeCards.map((item, i) => (
             <TableRow
               key={i}
-              className={`${sora.className} grid grid-cols-4 items-center p-4 bg-orange-50 hover:bg-orange-100 transition-colors duration-200 rounded-xl`}
+              className={`${sora.className} grid grid-cols-4 items-center p-4 bg-orange-50 hover:bg-orange-100 transition-colors duration-200 rounded-xl cursor-pointer`}
             >
               <TableCell className="text-left font-bold">
                 {item.filename}
