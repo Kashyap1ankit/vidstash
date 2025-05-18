@@ -3,7 +3,7 @@ import FileUpload from "@/components/dashboard/file-upload";
 
 export default function Dashboard() {
   return (
-    <div>
+    <div className="mb-4">
       <FileUpload />
       <AllVideos />
     </div>

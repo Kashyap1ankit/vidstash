@@ -8,9 +8,9 @@ export default function DashboardRootLayout({
 }>) {
   return (
     <SidebarProvider>
-      <div className="flex  h-dvh w-full border-2 overflow-hidden">
+      <div className="flex  h-dvh w-full border-2 overflow-hidden  no-scrollbar">
         <AppSidebar />
-        <main className="flex flex-col gap-6 w-full overflow-auto">
+        <main className="flex flex-col gap-6 w-full overflow-auto no-scrollbar">
           <SidebarTrigger className="top-0 -left-2 text-primary-btn" />
           <div className="px-4 md:mx-12">{children}</div>
         </main>

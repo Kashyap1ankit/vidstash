@@ -31,5 +31,18 @@ export const signinSchema = z.object({
     .regex(new RegExp(".*[0-9].*"), { message: "Must include a number" }),
 });
 
+export const videoUploadSizeSchema = z.object({
+  file: z.any().refine(
+    (val) => {
+      if (val) {
+        return val.size < 2 * 1024 * 1024;
+      }
+      return true;
+    },
+    { message: "Video should be less than 500mb" }
+  ),
+});
+
 export type signupSchemaType = z.infer<typeof signupSchema>;
 export type signinSchemaType = z.infer<typeof signinSchema>;
+export type videoUploadSizeSchemaType = z.infer<typeof videoUploadSizeSchema>;

@@ -18,15 +18,15 @@ export default function Navbar() {
       className={` w-full py-4  border px-6 md:px-12 lg:px-20 flex items-center justify-between z-999 bg-white`}
     >
       {/* Logo */}
-      {/* <Link href={"/"}> */}
-      <Image
-        src={"/vidstash.png"}
-        width={200}
-        height={200}
-        alt="logo"
-        className="w-36"
-      />
-      {/* </Link> */}
+      <Link href={"/"}>
+        <Image
+          src={"/vidstash.png"}
+          width={200}
+          height={200}
+          alt="logo"
+          className="w-36"
+        />
+      </Link>
 
       {/* Desktop Buttons */}
       <div className="hidden md:flex items-center gap-4">
