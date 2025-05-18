@@ -9,11 +9,12 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "../ui/dialog";
+} from "./ui/dialog";
 import { Github, Link2, Pen } from "lucide-react";
 import Link from "next/link";
-import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { mona, sora } from "@/lib/font";
+import { ProfileChart } from "./ui/profile-chart";
 
 export default function ProfileComp() {
   const session = useSession();
@@ -40,40 +41,24 @@ export default function ProfileComp() {
     <div className=" mx-auto mb-2">
       <div className="flex flex-col gap-18 mt-6 ">
         {/* image details secton  */}
-        <div className="bg-orange-50  cursor-pointer border rounded-2xl p-4">
-          <div className="flex justify-between">
-            <div className="flex gap-6 items-center">
-              <Avatar className="size-24">
-                <AvatarImage
-                  src={user?.image || "https://github.com/shadcn.png"}
-                />
-                <AvatarFallback>CN</AvatarFallback>
-              </Avatar>
+        <div className="flex flex-col lg:flex-row justify-between ">
+          <div className="flex gap-6 items-center bg-orange-50  cursor-pointer  rounded-2xl p-4 lg:w-2/3 xl:w-3/4">
+            <Avatar className="size-24">
+              <AvatarImage
+                src={user?.image || "https://github.com/shadcn.png"}
+              />
+              <AvatarFallback>CN</AvatarFallback>
+            </Avatar>
 
-              <div>
-                <p className={`${mona.className}  text-xl`}>{user?.name}</p>
-                <p className={`${sora.className} text-gray-400 text-sm`}>
-                  Patna, Bihar
-                </p>
-              </div>
+            <div>
+              <p className={`${mona.className}  text-xl`}>{user?.name}</p>
+              <p className={`${sora.className} text-gray-400 text-sm`}>
+                Patna, Bihar
+              </p>
             </div>
-
-            <Dialog>
-              <DialogTrigger
-                className={`${mona.className} flex gap-4 items-center border-2 h-fit justify-center my-auto px-4 py-2 rounded-full cursor-pointer bg-primary-btn text-white`}
-              >
-                <p className="font-public_sans">Edit</p>
-                <Pen className="size-4" />
-              </DialogTrigger>
-              <DialogContent>
-                <DialogHeader>
-                  <DialogDescription className="text-primary-btn font-bold text-center">
-                    Coming soon...
-                  </DialogDescription>
-                </DialogHeader>
-              </DialogContent>
-            </Dialog>
           </div>
+
+          <ProfileChart />
         </div>
 
         {/* personal details section  */}

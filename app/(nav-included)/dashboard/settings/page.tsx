@@ -1,5 +1,10 @@
 import React from "react";
+import { mona } from "@/lib/font";
 
 export default function Settings() {
-  return <div>Settings</div>;
+  return (
+    <div>
+      <p className={`${mona.className} text-2xl`}>Settings</p>
+    </div>
+  );
 }

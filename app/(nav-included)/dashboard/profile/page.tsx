@@ -1,4 +1,4 @@
-import ProfileComp from "@/components/profile/main";
+import ProfileComp from "@/components/profile";
 import { mona } from "@/lib/font";
 
 export default function Shared() {
