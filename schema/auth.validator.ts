@@ -43,6 +43,14 @@ export const videoUploadSizeSchema = z.object({
   ),
 });
 
+export const deleteUserSchema = z.object({
+  random: z
+    .string({ message: "Required" })
+    .min(1, { message: "Min 1 char long" })
+    .max(8, { message: "Can't be more long" }),
+});
+
 export type signupSchemaType = z.infer<typeof signupSchema>;
 export type signinSchemaType = z.infer<typeof signinSchema>;
 export type videoUploadSizeSchemaType = z.infer<typeof videoUploadSizeSchema>;
+export type deleteUserType = z.infer<typeof deleteUserSchema>;
