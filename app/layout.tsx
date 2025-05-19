@@ -17,7 +17,9 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <SessionProvider>
-          <main>{children}</main>
+          <main className="bg-gradient-to-l from-primary-bg from-35% via-secondary-bg to-teritary-bg min-w-full min-h-screen">
+            {children}
+          </main>
           <Toaster />
         </SessionProvider>
       </body>

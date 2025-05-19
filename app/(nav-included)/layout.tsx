@@ -6,7 +6,7 @@ export default function NavIncludedRootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="bg-gradient-to-l from-primary-bg from-35% via-secondary-bg to-teritary-blue min-w-full">
+    <div className="bg-gradient-to-l from-primary-bg from-35% via-secondary-bg to-teritary-bg min-w-full">
       <Navbar />
       {children}
     </div>

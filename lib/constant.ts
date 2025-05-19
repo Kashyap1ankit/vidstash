@@ -1,13 +1,14 @@
 export const blurIn = {
   initial: {
     opacity: 0,
-    scale: 0.9,
+    scale: 0.85,
     filter: "blur(10px)",
   },
   animate: {
     opacity: 1,
     scale: 1,
     filter: "blur(0px)",
+    delay: 0.5,
     transition: {
       duration: 1,
       ease: "easeOut",
@@ -58,6 +59,7 @@ export const authRoutes = ["/login", "/signup"];
 export const authApiRoute = "/api/auth";
 
 import { History, Home, Settings, User } from "lucide-react";
+import { delay } from "motion/react";
 
 // Menu items.
 export const items = [
