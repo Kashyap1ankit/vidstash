@@ -1,20 +1,21 @@
 "use client";
 
-import React, { use, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSession } from "next-auth/react";
 import {
   Dialog,
   DialogContent,
   DialogDescription,
   DialogHeader,
-  DialogTitle,
   DialogTrigger,
 } from "./ui/dialog";
-import { Github, Link2, Pen } from "lucide-react";
-import Link from "next/link";
+import { Pen } from "lucide-react";
+
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { mona, sora } from "@/lib/font";
 import { ProfileChart } from "./ui/profile-chart";
+import { motion } from "motion/react";
+import { sideward } from "@/lib/constant";
 
 export default function ProfileComp() {
   const session = useSession();
@@ -38,7 +39,11 @@ export default function ProfileComp() {
   }
 
   return (
-    <div className=" mx-auto mb-2">
+    <motion.div
+      className=" mx-auto mb-2"
+      initial={sideward.initial}
+      animate={sideward.animate}
+    >
       <div className="flex flex-col gap-18 mt-6 ">
         {/* image details secton  */}
         <div className="flex flex-col lg:flex-row justify-between ">
@@ -111,6 +116,6 @@ export default function ProfileComp() {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

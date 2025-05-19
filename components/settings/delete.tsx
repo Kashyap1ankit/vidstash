@@ -16,9 +16,11 @@ import { deleteUserSchema, deleteUserType } from "@/schema/auth.validator";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { signOut, useSession } from "next-auth/react";
 import Randomstring from "randomstring";
-import { DeleteUser } from "@/app/actions/delet.user";
+import { DeleteUser } from "@/app/actions/delete.user";
 import { toast } from "sonner";
 import { Button } from "../ui/button";
+import { motion } from "motion/react";
+import { sideward } from "@/lib/constant";
 
 export default function DeleteComp() {
   const {
@@ -62,7 +64,7 @@ export default function DeleteComp() {
   }
 
   return (
-    <div>
+    <motion.div initial={sideward.initial} animate={sideward.animate}>
       <p className={`${mona.className} text-xl text-red-600`}>Delete Account</p>
       <div className={` flex items-start gap-4 mt-4`}>
         <TriangleAlert className="size-8 text-primary-btn" />
@@ -136,6 +138,6 @@ export default function DeleteComp() {
           </AlertDialogHeader>
         </AlertDialogContent>
       </AlertDialog>
-    </div>
+    </motion.div>
   );
 }

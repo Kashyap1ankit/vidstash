@@ -66,7 +66,7 @@ export default function FileUpload() {
   return (
     <div className="relative z-999">
       <Dialog>
-        <DialogTrigger className="group border shadow-xl text-white cursor-pointer w-fit p-4 rounded-full bg-primary-btn fixed bottom-12 right-12">
+        <DialogTrigger className="group border shadow-xl text-white cursor-pointer w-fit p-4 rounded-full bg-primary-btn fixed bottom-6 md:bottom-12 right-6 md:right-12">
           <CloudUpload className="group-hover:animate-bounce duration-300" />
         </DialogTrigger>
         <DialogContent>

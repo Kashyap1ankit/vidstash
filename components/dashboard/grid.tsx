@@ -1,3 +1,5 @@
+"use client";
+
 import { mona, sora } from "@/lib/font";
 import {
   Download,
@@ -12,15 +14,20 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { resumeCards } from "@/lib/constant";
+import { resumeCards, upward } from "@/lib/constant";
+import { motion } from "motion/react";
+
 export default function Grid() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <motion.div
+      className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6"
+      initial={upward.initial}
+      animate={upward.animate}
+    >
       {resumeCards.map((item) => {
         return (
           <div className="flex flex-col gap-4 bg-card-primary  rounded-2xl p-4 shadow-md">
@@ -86,6 +93,6 @@ export default function Grid() {
           </div>
         );
       })}
-    </div>
+    </motion.div>
   );
 }

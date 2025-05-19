@@ -1,28 +1,24 @@
+"use client";
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import {
-  Download,
-  Ellipsis,
-  Eye,
-  EyeOff,
-  Pen,
-  Share2,
-  Trash,
-} from "lucide-react";
-import { historyData, resumeCards } from "@/lib/constant";
-import { Avatar, AvatarImage, AvatarFallback } from "./ui/avatar";
+import { Eye, EyeOff } from "lucide-react";
+import { historyData, upward } from "@/lib/constant";
+import { motion } from "motion/react";
 import { mona, sora } from "@/lib/font";
 
 export default function HistoryTablur() {
   return (
-    <div className="overflow-x-auto mt-6">
+    <motion.div
+      className="overflow-x-auto mt-6"
+      initial={upward.initial}
+      animate={upward.animate}
+    >
       <Table className="min-w-[700px]">
         <TableHeader>
           <TableRow
@@ -57,6 +53,6 @@ export default function HistoryTablur() {
           ))}
         </TableBody>
       </Table>
-    </div>
+    </motion.div>
   );
 }

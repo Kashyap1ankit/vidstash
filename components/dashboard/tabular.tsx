@@ -1,7 +1,8 @@
+"use client";
+
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
@@ -16,12 +17,17 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Download, Ellipsis, Pen, Share2, Trash } from "lucide-react";
-import { resumeCards } from "@/lib/constant";
+import { resumeCards, upward } from "@/lib/constant";
 import { Avatar, AvatarImage, AvatarFallback } from "../ui/avatar";
+import { motion } from "motion/react";
 
 export default function TabularVideo() {
   return (
-    <div className="overflow-x-auto mt-6">
+    <motion.div
+      className="overflow-x-auto mt-6"
+      initial={upward.initial}
+      animate={upward.animate}
+    >
       <Table className="min-w-[700px]">
         <TableHeader>
           <TableRow
@@ -82,6 +88,6 @@ export default function TabularVideo() {
           ))}
         </TableBody>
       </Table>
-    </div>
+    </motion.div>
   );
 }
