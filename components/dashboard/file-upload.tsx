@@ -69,7 +69,7 @@ export default function FileUpload() {
         <DialogTrigger className="group border shadow-xl text-white cursor-pointer w-fit p-4 rounded-full bg-primary-btn fixed bottom-6 md:bottom-12 right-6 md:right-12">
           <CloudUpload className="group-hover:animate-bounce duration-300" />
         </DialogTrigger>
-        <DialogContent>
+        <DialogContent className="mx-auto  max-h-[500px] md:max-h-[600px] overflow-y-scroll">
           <div
             className="border-2 rounded-2xl border-dashed p-6 cursor-pointer"
             onClick={handleIconClick}
@@ -89,8 +89,17 @@ export default function FileUpload() {
             </div>
 
             {previewUrl && (
-              <video key={previewUrl} width="400" controls className="mx-auto">
-                <source src={previewUrl} type="video/mp4" />
+              <video
+                key={previewUrl}
+                width="400"
+                controls
+                className="mx-auto  max-h-[500px] md:max-h-[600px] overflow-y-scroll"
+              >
+                <source
+                  src={previewUrl}
+                  type="video/mp4"
+                  className="mx-auto  max-h-[500px] md:max-h-[600px] overflow-y-scroll"
+                />
                 Your browser does not support the video tag.
               </video>
             )}

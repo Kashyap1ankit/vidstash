@@ -35,7 +35,7 @@ export const videoUploadSizeSchema = z.object({
   file: z.any().refine(
     (val) => {
       if (val) {
-        return val.size < 2 * 1024 * 1024;
+        return val.size < 500 * 1024 * 1024;
       }
       return true;
     },

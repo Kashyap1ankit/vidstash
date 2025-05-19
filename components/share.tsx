@@ -42,7 +42,7 @@ export default function ShareComp({ id }: { id: string }) {
   });
   const [shareUrl, setShareUrl] = useState<string | null>(null);
   function saveSharedLink() {
-    setShareUrl(`${process.env.NEXT_PUBLIC_CLIENT_URL}/${id}/${uuidv4()}`);
+    setShareUrl(`${process.env.NEXT_PUBLIC_CLIENT_URL}${id}/${uuidv4()}`);
   }
 
   return (
