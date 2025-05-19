@@ -55,10 +55,9 @@ export const shareVideoSchema = z.object({
   expiry: z.enum(["1hr", "30min", "12hr", "24hr"], {
     message: "Invalid data ",
   }),
-  email_addresses: z.union([
-    z.array(z.string()).optional(),
-    z.string().optional(),
-  ]),
+  email_addresses: z
+    .array(z.string().email({ message: "Must be a email" }))
+    .optional(),
 });
 
 export type signupSchemaType = z.infer<typeof signupSchema>;

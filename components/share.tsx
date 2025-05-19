@@ -41,8 +41,8 @@ export default function ShareComp({ id }: { id: string }) {
     resolver: zodResolver(shareVideoSchema),
   });
   const [shareUrl, setShareUrl] = useState<string | null>(null);
-  function saveSharedLink(data: shareVideoSchemaType) {
-    setShareUrl(`http://localhost:3000/${id}/${uuidv4()}`);
+  function saveSharedLink() {
+    setShareUrl(`${process.env.NEXT_PUBLIC_CLIENT_URL}/${id}/${uuidv4()}`);
   }
 
   return (
@@ -126,13 +126,15 @@ export default function ShareComp({ id }: { id: string }) {
                         e.currentTarget.value.trim() !== ""
                       ) {
                         e.preventDefault();
-                        console.log(e.currentTarget.value);
+
                         const value = e.currentTarget.value.trim();
 
                         const newEmailAddresses = [...emailAddress, value];
 
                         setEmailAddresses(newEmailAddresses);
-                        setValue("email_addresses", newEmailAddresses);
+                        setValue("email_addresses", newEmailAddresses, {
+                          shouldValidate: true,
+                        });
 
                         e.currentTarget.value = "";
                       }

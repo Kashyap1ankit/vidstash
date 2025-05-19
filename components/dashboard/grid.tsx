@@ -20,6 +20,7 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { resumeCards, upward } from "@/lib/constant";
 import { motion } from "motion/react";
+import ShareComp from "../share";
 
 export default function Grid() {
   return (
@@ -83,15 +84,19 @@ export default function Grid() {
             </div>
             {/* footer */}
 
-            <div className="flex gap-2 items-end text-gray-500">
-              <Avatar className="size-6">
-                <AvatarImage src={item.uploader.avatar} />
-                <AvatarFallback>{item.uploader.fallback}</AvatarFallback>
-              </Avatar>
+            <div className="flex justify-between">
+              <div className="flex gap-2 items-end text-gray-500">
+                <Avatar className="size-6">
+                  <AvatarImage src={item.uploader.avatar} />
+                  <AvatarFallback>{item.uploader.fallback}</AvatarFallback>
+                </Avatar>
 
-              <p className={`${sora.className} text-xs tracking-wider`}>
-                Uploaded at : <span>{item.uploadedAt}</span>
-              </p>
+                <p className={`${sora.className} text-xs tracking-wider`}>
+                  Uploaded at : <span>{item.uploadedAt}</span>
+                </p>
+              </div>
+
+              <ShareComp id={item.id} />
             </div>
           </div>
         );

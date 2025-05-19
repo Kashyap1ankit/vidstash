@@ -59,7 +59,6 @@ export const authRoutes = ["/login", "/signup"];
 export const authApiRoute = "/api/auth";
 
 import { History, Home, Settings, User } from "lucide-react";
-import { delay } from "motion/react";
 
 // Menu items.
 export const items = [

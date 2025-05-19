@@ -16,7 +16,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Download, Ellipsis, Pen, Share2, Trash } from "lucide-react";
+import { Download, Ellipsis, Pen, Trash } from "lucide-react";
 import { resumeCards, upward } from "@/lib/constant";
 import { Avatar, AvatarImage, AvatarFallback } from "../ui/avatar";
 import { motion } from "motion/react";
