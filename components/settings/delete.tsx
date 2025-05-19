@@ -72,8 +72,8 @@ export default function DeleteComp() {
           Deleting your account is a permanent action and cannot be undone. Once
           deleted, all your data — including your profile, posts, comments,
           saved content, and personal settings — will be permanently erased and
-          cannot be recovered. Please proceed only if you're sure you want to
-          close your account permanently
+          cannot be recovered. Please proceed only if you&apos;re sure you want
+          to close your account permanently
         </p>
       </div>
 

@@ -13,7 +13,7 @@ export const AuthConfig = {
         password: {},
       },
 
-      //@ts-ignore
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       authorize: async (credentials: any) => {
         try {
           const { success } = signinSchema.safeParse({
@@ -46,9 +46,9 @@ export const AuthConfig = {
             name: isUserInDb.name ?? "",
             email: isUserInDb.email,
             image: isUserInDb.image ?? "",
-            createdAt: isUserInDb.createdAt,
+            createdAt: isUserInDb.createdAt.toISOString(),
           };
-        } catch (error) {
+        } catch {
           return null;
         }
       },

@@ -30,7 +30,10 @@ export default function Grid() {
     >
       {resumeCards.map((item) => {
         return (
-          <div className="flex flex-col gap-4 bg-card-primary  rounded-2xl p-4 shadow-md">
+          <div
+            className="flex flex-col gap-4 bg-card-primary  rounded-2xl p-4 shadow-md"
+            key={item.filename}
+          >
             {/* header */}
             <div className="flex justify-between">
               <div className="flex items-center gap-2">

@@ -1,7 +1,7 @@
 "use client";
 
 import { mona, sora } from "@/lib/font";
-import { Eye, EyeOff, LockIcon, Mail, User } from "lucide-react";
+import { Eye, EyeOff, LockIcon, Mail } from "lucide-react";
 import Image from "next/image";
 import { Button } from "../ui/button";
 import { motion } from "motion/react";
