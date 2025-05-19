@@ -50,7 +50,19 @@ export const deleteUserSchema = z.object({
     .max(8, { message: "Can't be more long" }),
 });
 
+export const shareVideoSchema = z.object({
+  visibility: z.enum(["PRIVATE", "PUBLIC"], { required_error: "Invalid data" }),
+  expiry: z.enum(["1hr", "30min", "12hr", "24hr"], {
+    message: "Invalid data ",
+  }),
+  email_addresses: z.union([
+    z.array(z.string()).optional(),
+    z.string().optional(),
+  ]),
+});
+
 export type signupSchemaType = z.infer<typeof signupSchema>;
 export type signinSchemaType = z.infer<typeof signinSchema>;
 export type videoUploadSizeSchemaType = z.infer<typeof videoUploadSizeSchema>;
 export type deleteUserType = z.infer<typeof deleteUserSchema>;
+export type shareVideoSchemaType = z.infer<typeof shareVideoSchema>;

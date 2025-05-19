@@ -88,6 +88,7 @@ export const items = [
 
 export const resumeCards = [
   {
+    id: "001",
     filename: "Ankit_resume.pdf",
     image:
       "https://images.pexels.com/photos/31464235/pexels-photo-31464235/free-photo-of-romantic-flamingos-displaying-heart-shaped-pose.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
@@ -98,6 +99,7 @@ export const resumeCards = [
     uploadedAt: "13 May 2025",
   },
   {
+    id: "002",
     filename: "Frontend_Developer.pdf",
     image:
       "https://images.pexels.com/photos/6476585/pexels-photo-6476585.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
@@ -108,6 +110,7 @@ export const resumeCards = [
     uploadedAt: "10 May 2025",
   },
   {
+    id: "003",
     filename: "UI_UX_Designer.pdf",
     image:
       "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
@@ -118,6 +121,7 @@ export const resumeCards = [
     uploadedAt: "09 May 2025",
   },
   {
+    id: "004",
     filename: "Fullstack_Resume.pdf",
     image:
       "https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
@@ -128,6 +132,7 @@ export const resumeCards = [
     uploadedAt: "08 May 2025",
   },
   {
+    id: "005",
     filename: "Internship_Ankit.pdf",
     image:
       "https://images.pexels.com/photos/1236701/pexels-photo-1236701.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
@@ -138,6 +143,7 @@ export const resumeCards = [
     uploadedAt: "05 May 2025",
   },
   {
+    id: "006",
     filename: "Product_Manager_CV.pdf",
     image:
       "https://images.pexels.com/photos/936722/pexels-photo-936722.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
@@ -148,6 +154,7 @@ export const resumeCards = [
     uploadedAt: "03 May 2025",
   },
   {
+    id: "007",
     filename: "Backend_Dev.pdf",
     image:
       "https://images.pexels.com/photos/31701241/pexels-photo-31701241/free-photo-of-colorful-pink-and-beige-mediterranean-architecture.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
@@ -158,6 +165,7 @@ export const resumeCards = [
     uploadedAt: "30 April 2025",
   },
   {
+    id: "008",
     filename: "Marketing_Resume.pdf",
     image:
       "https://images.pexels.com/photos/617758/pexels-photo-617758.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
@@ -168,6 +176,7 @@ export const resumeCards = [
     uploadedAt: "27 April 2025",
   },
   {
+    id: "009",
     filename: "DevOps_Engineer.pdf",
     image:
       "https://images.pexels.com/photos/1181353/pexels-photo-1181353.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
@@ -178,6 +187,7 @@ export const resumeCards = [
     uploadedAt: "25 April 2025",
   },
   {
+    id: "010",
     filename: "Ankit_Portfolio.pdf",
     image:
       "https://images.pexels.com/photos/2901214/pexels-photo-2901214.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",

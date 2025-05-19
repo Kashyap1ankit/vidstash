@@ -20,6 +20,7 @@ import { Download, Ellipsis, Pen, Share2, Trash } from "lucide-react";
 import { resumeCards, upward } from "@/lib/constant";
 import { Avatar, AvatarImage, AvatarFallback } from "../ui/avatar";
 import { motion } from "motion/react";
+import ShareComp from "../share";
 
 export default function TabularVideo() {
   return (
@@ -31,11 +32,12 @@ export default function TabularVideo() {
       <Table className="min-w-[700px]">
         <TableHeader>
           <TableRow
-            className={`${mona.className} font-bold tracking-wider grid grid-cols-4`}
+            className={`${mona.className} font-bold tracking-wider grid grid-cols-5`}
           >
             <TableHead className="text-left">Name</TableHead>
             <TableHead className="text-center">Created at</TableHead>
             <TableHead className="text-center">Owner</TableHead>
+            <TableHead className="text-center">Share</TableHead>
             <TableHead className="text-right">Action</TableHead>
           </TableRow>
         </TableHeader>
@@ -44,7 +46,7 @@ export default function TabularVideo() {
           {resumeCards.map((item, i) => (
             <TableRow
               key={i}
-              className={`${sora.className} grid grid-cols-4 items-center p-4 bg-orange-50 hover:bg-orange-100 transition-colors duration-200 rounded-xl cursor-pointer`}
+              className={`${sora.className} grid grid-cols-5 items-center p-4 bg-orange-50 hover:bg-orange-100 transition-colors duration-200 rounded-xl cursor-pointer`}
             >
               <TableCell className="text-left font-bold">
                 {item.filename}
@@ -56,6 +58,11 @@ export default function TabularVideo() {
                   <AvatarFallback>{item.uploader.fallback}</AvatarFallback>
                 </Avatar>
               </TableCell>
+
+              <TableCell className="text-center">
+                <ShareComp id={item.id} />
+              </TableCell>
+
               <TableCell className="text-right">
                 <DropdownMenu>
                   <DropdownMenuTrigger>
@@ -67,11 +74,7 @@ export default function TabularVideo() {
                       <p className={`${sora.className} ml-2`}>Delete</p>
                     </DropdownMenuItem>
                     <DropdownMenuSeparator />
-                    <DropdownMenuItem>
-                      <Share2 className="size-4" />
-                      <p className={`${sora.className} ml-2`}>Share</p>
-                    </DropdownMenuItem>
-                    <DropdownMenuSeparator />
+
                     <DropdownMenuItem>
                       <Download className="size-4" />
                       <p className={`${sora.className} ml-2`}>Download</p>
